@@ -1,26 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  /* font-family: "Montserrat", serif; */
+  font-family: Inter, Inter Fallback, sans-serif;
 }
-
+.font-fred {
+  font-family: "Fredericka the Great", serif;
+}
+.font-source {
+  font-family: "Source Code Pro", serif;
+}
+.font-monst {
+  font-family: "Urbanist", serif;
+  /* font-family: "Montserrat", serif; */
+}
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #373838;
+  --color-foreground: #efefef;
+  --color-textColor: #efefef;
+  --color-primaryGreen: #008273;
+  --color-primaryYellow: #fbff15;
+  --color-primaryRed: #db222a;
+  --color-secondary: #373838; /* #1e2939 */
+  --color-accent: #efefef;
+  --color-darkGreen: #1b2322;
+  --h1-size: 6rem;
+  --h1-weight: 500;
+  --h2-size: 4rem;
+  --h2-weight: 500;
+  --h3-size: 3rem;
+  --h3-weight: 500;
+  --h4-size: 2rem;
+  --h4-weight: 500;
+  --h5-size: 1.5rem;
+  --h5-weight: 500;
+  --h6-size: 1.2rem;
+  --h6-weight: 500;
+  --p-size: 1.2rem;
+  --p-weight: 400;
 }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  /* background: var(--color-background);
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif; */
+  overflow-x: clip;
+  max-width: 1440px;
+}
+body::after {
+  display: inline-block;
+  content: "";
+  z-index: 10000;
+  position: fixed;
+  opacity: 0.9;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/noisebg.png");
+  animation: 0.4s infinite noise !important;
+  pointer-events: none;
+}
+@keyframes noise {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  10% {
+    background-position: -5% -10%;
+  }
+
+  20% {
+    background-position: -15% 5%;
+  }
+
+  30% {
+    background-position: 7% -25%;
+  }
+
+  40% {
+    background-position: 20% 25%;
+  }
+
+  50% {
+    background-position: -25% 10%;
+  }
+
+  60% {
+    background-position: 15% 5%;
+  }
+
+  70% {
+    background-position: 0% 15%;
+  }
+
+  80% {
+    background-position: 25% 35%;
+  }
+
+  90% {
+    background-position: -10% 10%;
   }
 }
+.nav-box-shadow {
+  box-shadow: 5px 1px 26px -5px rgba(0, 0, 0, 0.123);
+}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.hero-web-txt::after {
+  display: inline-block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50% 50% 50% 0;
+  background-color: #008273;
+  position: relative;
+  bottom: 40px;
+}
+.life_before {
+  position: relative;
+  z-index: 1;
+}
+.life_before::before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 40%;
+  z-index: -1;
+  position: absolute;
+  bottom: 5px;
+  background-color: #00827373;
+}
+.scrollbar-hide {
+  scrollbar-width: none; /* For Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+.custom-cursor {
+  position: fixed;
+  width: 35px;
+  height: 35px;
+  /* background-color: rgba(0, 130, 115, 0.8);  */
+  border: 1px solid #008273;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.7s cubic-bezier(0.75, 2.27, 0.3, 2.33);
+  z-index: 9999;
+  /* transition: transform 0.2s ease, background-color 0.2s ease; */
+}
+
+.custom-cursor .focus {
+  /* transform: scale(2); */
+  /* background-color: #1b2322; darkGreen */
+  width: 45px !important;
+  height: 45px !important;
+}
+.focus {
+  transition: all 0.5s;
+}
+.custom-cursor.cursor-black {
+  border: 1px solid #008273;
+  background-color: transparent;
+}
+.cursor-default {
+  box-shadow: 0 0 0 3px #008273;
+  transition: all 0.5s;
+}
+
+.cursor-black {
+  box-shadow: 0 0 0 1px black;
+  transition: all 0.5s;
+}
+
+@media screen and (max-width: 500px) {
+  body::after {
+    animation: none;
+  }
+}
+@media screen and (max-width: 380px) {
+  .hero-btn-cont {
+    flex-direction: column !important;
+  }
 }
