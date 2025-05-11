@@ -10,13 +10,10 @@ interface SocialLink {
 }
 
 const socialLinks: SocialLink[] = [
-  { name: "Linkedin", url: "https://linkedin.com" },
-  { name: "Twitter", url: "https://twitter.com" },
-  { name: "Facebook", url: "https://facebook.com" },
-  { name: "Instagram", url: "https://instagram.com" },
-  { name: "Github", url: "https://github.com" },
-  { name: "Behance", url: "https://behance.net" },
-  { name: "Medium", url: "https://medium.com" },
+  { name: "Linkedin", url: "https://www.linkedin.com/in/kadiri-o-emmanuel/" },
+  { name: "Twitter", url: "https://x.com/emmykay26" },
+  { name: "Instagram", url: "https://www.instagram.com/kadiri___emmanuel/" },
+  { name: "Github", url: "https://github.com/EmmyKay0026" },
 ];
 
 const LastCTA = () => {
