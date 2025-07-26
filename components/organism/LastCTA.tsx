@@ -116,6 +116,14 @@ const LastCTA = () => {
         height={500}
         className="absolute left-0 top-[40%] rounded-2xl"
       />
+      <Link
+        href={
+          "https://www.dropbox.com/scl/fo/jq74hj3ncqbb05pg1jmtc/ANRp7Q8mAmhSMxUtMKy0FFE?rlkey=zh8vkv54fxyekqp2zrhbnv7wb&e=1&st=c10t1khm&dl=0"
+        }
+        target="_blank"
+      >
+        dropbox
+      </Link>
       <div
         style={{
           backgroundImage:
