@@ -27,8 +27,10 @@ export const Hero = () => {
             <span className="text-primaryGreen mb-4  block text-[1rem] leading-[2rem] lg:text-[1.3rem] lg:leading-[2.6rem] ">
               Hello, I&apos;m Emmanuel Kadiri
             </span>
-            There is way to make your business easier. I design and develop
-            solutions for businesses.
+            Software developer specialized in designing and developing solutions
+            for businesses.
+            {/* There is way to make your business easier. I design and
+            develop solutions for businesses. */}
             {/* I make making money easy for you. */}
             {/* Similar to the <span className="hero-web-txt">popular</span>{" "}
             creation story, I give{" "}
@@ -39,7 +41,7 @@ export const Hero = () => {
           <article className="flex flex-col-reverse justify-between lg:flex-row">
             <div className="hero-btn-cont flex gap-[9px] md:gap-[20px]">
               <Link href={"/#portfolio"} className="">
-                <Button outline className="whitespace-nowrap m-0" >
+                <Button outline className="whitespace-nowrap m-0">
                   My Work
                 </Button>
               </Link>
@@ -53,8 +55,8 @@ export const Hero = () => {
             </div>
             <div className="h-[10px] lg:h-[60px]" />
             <p className="text-[1.2rem] lg:text-[1.5rem] text-secondary dark:text-accent lg:w-[50%]">
-              I analyse, design build and scale solutions for businesses.
-              Helping you focus on business growth and revenue
+              {/* I analyse, design build and scale solutions for businesses.
+              Helping you focus on business growth and revenue */}
               {/* Similar to the popular creation story, I give life to any project
               I work on. */}
               {/* As a Product Manager and Digital Transformation Consultant, I help

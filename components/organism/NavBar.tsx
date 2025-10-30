@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
@@ -8,31 +10,35 @@ import { PiMoonStarsFill } from "react-icons/pi";
 import { IoMdSunny } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import Menu from "../molecules/Menu";
+import { useTheme } from "next-themes";
 
 const NavBar = () => {
-  const [theme, setTheme] = useState("light");
+  // const [theme, setTheme] = useState("light");
+  const { theme, setTheme, resolvedTheme } = useTheme();
+
+  // const Icon = resolvedTheme === "dark" ? PiMoonStarsFill : IoMdSunny;
   const [showMenu, setShowMenu] = useState(false);
 
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") || "light";
-    setTheme(storedTheme);
-    if (storedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedTheme = localStorage.getItem("theme") || "light";
+  //   setTheme(storedTheme);
+  //   if (storedTheme === "dark") {
+  //     document.documentElement.classList.add("dark");
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //   }
+  // }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
+  // const toggleTheme = () => {
+  //   const newTheme = theme === "light" ? "dark" : "light";
+  //   setTheme(newTheme);
+  //   localStorage.setItem("theme", newTheme);
+  //   if (newTheme === "dark") {
+  //     document.documentElement.classList.add("dark");
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //   }
+  // };
 
   return (
     <>
@@ -68,7 +74,10 @@ const NavBar = () => {
               <Link href={"#contact"}>Contact</Link>
             </li>
           </ul>
-          <button className="cursor-pointer" onClick={toggleTheme}>
+          <button
+            className="cursor-pointer"
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          >
             {theme === "light" ? (
               <PiMoonStarsFill className="text-[1.6rem] text-secondary dark:text-accent" />
             ) : (
