@@ -65,13 +65,13 @@ const NavBar = () => {
         <div className="flex items-center gap-8">
           <ul className="hidden md:flex items-center gap-8 text-secondary dark:text-accent">
             <li className="cursor-pointer hover:text-primaryGreen dark:hover:text-primaryGreen transition-all duration-300 ease-in-out">
-              <Link href={"#portfolio"}>Projects</Link>
+              <Link href={"/#portfolio"}>Projects</Link>
             </li>
             <li className="cursor-pointer hover:text-primaryGreen dark:hover:text-primaryGreen transition-all duration-300 ease-in-out">
-              <Link href={"#services"}>Services</Link>
+              <Link href={"/#services"}>Services</Link>
             </li>
             <li className="cursor-pointer hover:text-primaryGreen dark:hover:text-primaryGreen transition-all duration-300 ease-in-out">
-              <Link href={"#contact"}>Contact</Link>
+              <Link href={"/#contact"}>Contact</Link>
             </li>
           </ul>
           <button
