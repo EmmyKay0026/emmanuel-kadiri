@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import HireMeCTA from "@/components/molecules/HireMeCTA";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system">
           {children}
+          <div className="hidden fixed right-[20px] bottom-0 md:block lg:right-[40px] z-[997]">
+            <HireMeCTA />
+          </div>
         </ThemeProvider>
       </body>
     </html>

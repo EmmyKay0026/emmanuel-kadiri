@@ -10,11 +10,18 @@ import LastCTA from "@/components/organism/LastCTA";
 import About from "@/components/organism/About";
 import WhyMe from "@/components/organism/WhyMe";
 import CareerJourney from "@/components/organism/CareerJourney";
+import BlurBgDesign from "@/components/atoms/BlurBgDesign";
+import HeroNew from "@/components/organism/HeroNew";
+import HomeHero from "@/components/organism/HomeHero";
 
 export default function Home() {
   return (
     <MainTemplates>
-      <Hero />
+      {/* <BlurBgDesign /> */}
+      {/* <Hero /> */}
+      <HomeHero />
+
+      {/* <HeroNew /> */}
       <Speech />
       <Portfolio />
       <About />
@@ -25,7 +32,7 @@ export default function Home() {
       <Testimonial />
       <JourneySoFarSummary />
       <Contact />
-      <LastCTA />
+      {/* <LastCTA /> */}
     </MainTemplates>
   );
 }

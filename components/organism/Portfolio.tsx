@@ -1,10 +1,9 @@
-"use client";
 import React from "react";
 import PortfolioCard from "../molecules/PortfolioCard";
 import TitleText from "../molecules/TitleText";
-import { PortfolioCardList } from "@/constants/protfolio";
+import projects from "@/constants/projects";
 
-const Portfolio = () => {
+const Portfolio = async () => {
   return (
     <section
       id="portfolio"
@@ -19,9 +18,10 @@ const Portfolio = () => {
           className="flex space-x-3 md:gap-[10px] pr-6 mt-5 lg:gap-[30px] lg:mt-10"
           style={{ width: "max-content" }}
         > */}
-        {PortfolioCardList.map((item, index) => (
-          <PortfolioCard key={index} item={item} />
-        ))}
+        {projects &&
+          projects.map((item, index) => (
+            <PortfolioCard key={index} item={item} />
+          ))}
         {/* <PortfolioCard />
           <PortfolioCard />
           <PortfolioCard />

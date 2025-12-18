@@ -4,20 +4,20 @@ import Button from "../atoms/Button";
 import { CgClose } from "react-icons/cg";
 import { FaArrowRight } from "react-icons/fa6";
 import { cn } from "../../lib/utils";
-import { motion } from "framer-motion";
-import { PortfolioCardListType } from "@/types";
+import { motion, Variants } from "framer-motion";
+import { PortfolioCardListType, ProjectDetailType } from "@/types";
 import Link from "next/link";
 import Image from "next/image";
 
-const PortfolioCard = ({ item }: { item: PortfolioCardListType }) => {
+const PortfolioCard = ({ item }: { item: ProjectDetailType }) => {
   const [moreDetails, setMoreDetails] = useState<boolean>(true);
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
   };
 
-  const detailsVariants = {
+  const detailsVariants: Variants = {
     hidden: { width: "0%", opacity: 0 },
     visible: {
       width: "50%",
@@ -38,11 +38,12 @@ const PortfolioCard = ({ item }: { item: PortfolioCardListType }) => {
       }}
     >
       <Image
-        src={item.img}
+        src={item.coverImage}
         alt="portfolio image"
         width={600}
         height={328}
-        unoptimized={item.img.split(".")[1] == "gif" ? true : false}
+        unoptimized={item.coverImage.split(".")[1] == "gif" ? true : false}
+        // unoptimized
         className="rounded-[10px] w-full h-full object-cover"
       />
       <motion.div
@@ -78,13 +79,16 @@ const PortfolioCard = ({ item }: { item: PortfolioCardListType }) => {
         <h2 className="text-[1.2rem] font-bold text-white dark:text-black md:text-[1.5rem]">
           {item.title}
         </h2>
-        <p className="text-accent dark:text-secondary text-[.7rem] md:text-[.8rem]">
+        <p className="text-accent dark:text-secondary text-[.7rem] md:text-[.8rem] line-clamp-3">
           {item.shortDes}
         </p>
         <div className="w-[70%]">
-          <Link href={item.link} target="_blank">
+          <Link
+            href={`/project/${item.slug}`}
+            target={item.slug.includes("http") ? "_blank" : ""}
+          >
             <Button className="whitespace-nowrap px-[20px] py-[10px] text-[.7rem] md:text-[.9rem] dark:hover:text-primaryGreen dark:hover:border-primaryGreen hover:text-white hover:border-white">
-              {item.ctaText || "Read More"}
+              {item.cardCtaText || "Learn more"}
             </Button>
           </Link>
         </div>

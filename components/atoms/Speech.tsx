@@ -18,8 +18,13 @@ const Speech = () => {
           1500,
           "TypeScript",
           1500,
-          "Flutter flow",
+          "GitHub Actions",
           1500,
+          "Docker",
+          1500,
+          "Nginx",
+          1500,
+
         ]}
         wrapper="span"
         speed={5}

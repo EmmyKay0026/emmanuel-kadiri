@@ -16,19 +16,53 @@ button {
   /* font-family: "Montserrat", serif; */
   font-family: Inter, Inter Fallback, sans-serif;
 }
+
 .font-fred {
   font-family: "Fredericka the Great", serif;
 }
+
 .font-source {
   font-family: "Source Code Pro", serif;
 }
+
 .font-monst {
   font-family: "Urbanist", serif;
   /* font-family: "Montserrat", serif; */
 }
+
 .font-poppins {
   font-family: "Poppins", sans-serif;
 }
+
+.landing-blur-bg {
+  position: absolute;
+  filter: blur(200px);
+  width: 248px;
+  height: 248px;
+  z-index: 0;
+  background-color: #008273;
+}
+
+.land-blur-bg-1 {
+  top: 4%;
+  right: 10%;
+}
+
+.tilted-card-demo-text {
+  text-transform: capitalize;
+  color: #fff;
+  letter-spacing: -0.5px;
+  background: #0006;
+  border-radius: 15px;
+  margin: 2em;
+  padding: 0.5rem 1em;
+  font-family: Figtree;
+  position: relative;
+  top: 300px;
+  font-weight: 900;
+  box-shadow: 0 5px 30px #06001059;
+}
+
 @theme inline {
   --color-background: #373838;
   --color-foreground: #efefef;
@@ -36,7 +70,8 @@ button {
   --color-primaryGreen: #008273;
   --color-primaryYellow: #fbff15;
   --color-primaryRed: #db222a;
-  --color-secondary: #373838; /* #1e2939 */
+  --color-secondary: #373838;
+  /* #1e2939 */
   --color-accent: #efefef;
   --color-darkGreen: #1b2322;
   --h1-size: 6rem;
@@ -85,9 +120,14 @@ button {
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
+
 html {
   scroll-behavior: smooth;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
 }
+
 body {
   /* background: var(--color-background);
   color: var(--color-text);
@@ -95,7 +135,8 @@ body {
   overflow-x: clip;
   max-width: 1440px;
 }
-/* body::after {
+
+body::after {
   display: inline-block;
   content: "";
   z-index: 10000;
@@ -108,9 +149,10 @@ body {
   width: 100%;
   height: 100%;
   background-image: url("/images/noisebg.png");
-  animation: 0.4s infinite noise !important;
+  animation: 0.05s infinite noise !important;
   pointer-events: none;
-} */
+}
+
 @keyframes noise {
   0%,
   100% {
@@ -154,6 +196,7 @@ body {
     background-position: -10% 10%;
   }
 }
+
 .nav-box-shadow {
   box-shadow: 5px 1px 26px -5px rgba(0, 0, 0, 0.123);
 }
@@ -168,10 +211,12 @@ body {
   position: relative;
   bottom: 40px;
 }
+
 .life_before {
   position: relative;
   z-index: 1;
 }
+
 .life_before::before {
   content: "";
   display: inline-block;
@@ -182,13 +227,17 @@ body {
   bottom: 5px;
   background-color: #00827373;
 }
+
 .scrollbar-hide {
-  scrollbar-width: none; /* For Firefox */
+  scrollbar-width: none;
+  /* For Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* For Chrome, Safari, and Edge */
+  display: none;
+  /* For Chrome, Safari, and Edge */
 }
+
 .custom-cursor {
   position: fixed;
   width: 35px;
@@ -209,13 +258,16 @@ body {
   width: 45px !important;
   height: 45px !important;
 }
+
 .focus {
   transition: all 0.5s;
 }
+
 .custom-cursor.cursor-black {
   border: 1px solid #008273;
   background-color: transparent;
 }
+
 .cursor-default {
   box-shadow: 0 0 0 3px #008273;
   transition: all 0.5s;
@@ -231,6 +283,7 @@ body {
     animation: none;
   }
 }
+
 @media screen and (max-width: 380px) {
   .hero-btn-cont {
     flex-direction: column !important;
@@ -240,6 +293,7 @@ body {
 .color {
   color: #131314;
 }
+
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -313,6 +367,7 @@ body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

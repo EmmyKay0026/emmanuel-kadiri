@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useScroll, useTransform } from "motion/react";
+import { motion, useInView, useScroll, useTransform, Variants } from "motion/react";
 import React from "react";
 import {
   IoIosArrowDropleftCircle,
@@ -11,7 +11,7 @@ import Image from "next/image";
 import { AwardCertificate } from "@/types";
 
 // let window: any;
-const imgVariants = {
+const imgVariants: Variants = {
   initial: { x: -500, y: 500, opacity: 0 },
   animate: {
     x: 0,
@@ -21,7 +21,7 @@ const imgVariants = {
   },
 };
 
-const textVariants = {
+const textVariants: Variants = {
   initial: { x: 500, y: 500, opacity: 0 },
   animate: {
     x: 0,

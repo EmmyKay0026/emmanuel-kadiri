@@ -11,11 +11,11 @@ const JourneySoFarMobCard = ({ img, title, date }: AwardCertificate) => {
 
   const prevImage = () => {
     setExperienceImg((prev) => (prev === 0 ? 0 : prev - 1));
-    console.log(experienceImg);
+    // console.log(experienceImg);
   };
   const nextImage = () => {
     setExperienceImg((prev) => (prev === img.length - 1 ? 0 : prev + 1));
-    console.log(experienceImg);
+    // console.log(experienceImg);
   };
   return (
     <div

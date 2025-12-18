@@ -36,7 +36,7 @@ const ContactForm = () => {
           publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_ID!,
         }
       );
-      console.log(result);
+      // console.log(result);
 
       e.currentTarget.reset();
       setSubmit(true);

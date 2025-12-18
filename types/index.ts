@@ -45,6 +45,34 @@ export interface PortfolioCardListType {
   ctaText: string;
 }
 
+export interface ProjectDetailType {
+  slug: string;
+  title: string;
+  jobDone: string;
+  cardCtaText: string;
+  shortDes: string;
+  description: string;
+  coverImage: string;
+  overview: string;
+  technologies: string[];
+  features: string[];
+  client: string;
+  timeline: string;
+  role: string;
+  images: string[];
+  moreImages?: string[];
+  website: string;
+  ctaText: string;
+  challenges: string;
+  challengesList: string[];
+  solution: string;
+  solutionList: string[];
+  learnings: string[];
+  featured: boolean;
+  problemImg?: string;
+  solutionImg?: string;
+}
+
 export type AwardCertificate = {
   id?: number;
   img: string[];

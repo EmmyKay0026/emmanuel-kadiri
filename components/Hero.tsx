@@ -1,8 +1,10 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import Button from "./atoms/Button";
 import HireMeCTA from "./molecules/HireMeCTA";
 import Link from "next/link";
+import TiltedCard from "./molecules/TiltedCard";
 
 export const Hero = () => {
   return (
@@ -22,13 +24,12 @@ export const Hero = () => {
         className="absolute  top-[40%] right-0 z-[-1]  invert dark:invert-0 md:top-[25%] lg:bottom-5 lg:top-[initial] lg:left-0"
       />
       <section className="flex flex-col justify-between px-[20px] md:px-[50px] lg:px-[70px] lg:flex-row bg-accent dark:bg-secondary ">
-        <div className="w-full z-[2] lg:qw-[73%]">
+        <div className="w-full z-[2] lg:dw-[73%]">
           <h1 className="sm:text-[1.6rem] text-[2rem] leading-[2.4rem]  text-pretty  text-secondary dark:text-accent md:text-[2.7rem] md:leading-[3.4rem] lg:text-[4rem] lg:leading-[5rem]">
             <span className="text-primaryGreen mb-4  block text-[1rem] leading-[2rem] lg:text-[1.3rem] lg:leading-[2.6rem] ">
               Hello, I&apos;m Emmanuel Kadiri
             </span>
-            Software developer specialized in designing and developing solutions
-            for businesses.
+            Specialized in designing and developing solutions for businesses.
             {/* There is way to make your business easier. I design and
             develop solutions for businesses. */}
             {/* I make making money easy for you. */}
@@ -66,15 +67,36 @@ export const Hero = () => {
             </p>
           </article>
         </div>
-        {/* <div className="w-[100%] md:w-[50%] lg:w-[34%]">
-          <Image
+        {/* <div className="w-[100%] md:w-[50%] lg:w-[45%]"> */}
+
+        {/* <TiltedCard
+            imageSrc="/images/gallery/emanuel.jpg"
+            altText="Emmanuel Kadiri"
+            captionText="Emmanuel Kadiri"
+            containerHeight="450px"
+            containerWidth="450px"
+            imageHeight="450px"
+            imageWidth="450px"
+            rotateAmplitude={12}
+            scaleOnHover={1.2}
+            showMobileWarning={false}
+            showTooltip={true}
+            displayOverlayContent={true}
+            overlayContent={
+              <p className="tilted-card-demo-text">
+                Emmanuel Kadiri
+              </p>
+            }
+          /> */}
+
+        {/* <Image
             src={"/images/hero_img.png"}
             alt="image of Emmanuel"
             width={200}
             height={200}
             className="object-cover  sw-[20%]   static top-0 md:dw-[50%] lg:relative lg:bottom-0 lg:w-[100%] lg:right-[200px] lg:pt-[100px] "
-          />
-        </div> */}
+          /> */}
+        {/* </div> */}
         {/* <div className="">
           <div className="hidden flex-col justify-end items-end gap-3 bg-white py-2 px-[8px] rounded-b-[3px] dark:bg-darkGreen lg:flex ">
             <a href="" className="">
@@ -116,9 +138,7 @@ export const Hero = () => {
           </div>
         </div> */}
       </section>
-      <div className="hidden fixed right-[20px] bottom-0 md:block lg:right-[40px] z-[997]">
-        <HireMeCTA />
-      </div>
+
       {/* <h1 className="text-5xl md:text-7xl font-bold mb-4">Emmanuel Kadiri</h1>
       <p className="text-lg md:text-2xl mb-6 text-center max-w-2xl">
         A passionate developer and designer creating impactful digital

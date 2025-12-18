@@ -46,7 +46,7 @@ const LastCTA = () => {
       <div className="max-w-7xl mx-auto w-full z-1 ">
         <div className="flex flex-col md:flex-row justify-between items-center mb-12">
           <div className="flex flex-col sm:flex-row items-start sm:items-center mb-8 md:mb-0 space-y-4 sm:space-y-0 sm:space-x-8">
-            <a
+            <Link
               href={`mailto:kadiriemmanueloshio0026@gmail.com`}
               className="flex items-center space-x-2 text-xl"
             >
@@ -67,8 +67,8 @@ const LastCTA = () => {
               <span className="text-[.9rem] md:text-[1rem]">
                 kadiriemmanueloshio0026@gmail.com
               </span>
-            </a>
-            <a
+            </Link>
+            <Link
               href={`tel:${"+234 810 406 4231".replace(/\s/g, "")}`}
               className="flex items-center space-x-2 text-xl"
             >
@@ -89,13 +89,13 @@ const LastCTA = () => {
               <span className="text-[.9rem] md:text-[1rem]">
                 +234 810 406 4231
               </span>
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="flex flex-wrap justify-center sm:justify-start items-center gap-8">
           {socialLinks.map((link, index) => (
-            <a
+            <Link
               key={index}
               href={link.url}
               target="_blank"
@@ -104,7 +104,7 @@ const LastCTA = () => {
             >
               <span>{link.name}</span>
               <FiArrowUpRight />
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -127,6 +127,9 @@ const LastCTA = () => {
         }}
         className="absolute w-full h-full top-0 left-0 pointer-events-none"
       />
+      {/* <h3 className="  text-center text-[3rem] md:text-[7.6rem] font-semibold opacity-50  bg-clip-text z-[10] mt-[60px] lg:mt-[7.5rem] ">
+          Emmanuel Kadiri O.
+        </h3> */}
     </div>
   );
 };
