@@ -1,11 +1,12 @@
 /* eslint-disable */
 "use client";
 
-import React, { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
+import { useCallback, useEffect, useRef, useState } from "react";
 // import SectionHeader from "../Molecules/SectionHeader";
-import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
+import TitleText from "../molecules/TitleText";
 
 interface CareerJourneyItem {
   key: string;
@@ -22,21 +23,38 @@ interface CareerJourneyItem {
 
 const priorities: CareerJourneyItem[] = [
   {
+    key: "eedc",
+    title: "Full stack developer at EEDC",
+    description:
+      "At Kaego, a leading travel agency in Nigeria, I worked as a web designer helping to reshape  customer acquisition, user experience and inter-team communications.",
+    activities: [
+      "redesign the website, making it responsive and user-friendly",
+      "built a content management system for easier updates and maintenance",
+      "implemented on-page SEO optimization, improving search engine visibility and organic traffic",
+    ],
+
+    image: "/images/eedclogo.svg",
+    color: "#E31E24",
+    icon: "/images/eedclogo.svg",
+    date: "Jan 2026 - Present",
+    location: "Enugu, Nigeria - Physical",
+    type: "Contract",
+  },
+  {
     key: "kageo",
     title: "Lead web designer at Kaego",
     description:
       "At Kaego, a leading travel agency in Nigeria, I worked as a web designer helping to reshape  customer acquisition, user experience and inter-team communications.",
     activities: [
-      "redesign their website, making it responsive and user-friendly",
+      "redesigned their website, making it responsive and user-friendly",
       "executed on-page SEO optimization, improving search engine visibility ",
       "built automated workflows integrating the website and Cliq (Zoho) for client acquisition",
     ],
 
-    image:
-      "https://trykaego.com/wp-content/uploads/2025/01/Screenshot_2024-09-07_at_4.11.29_PM-removebg-preview-1.png",
+    image: "/images/large-kaego.svg",
     color: "#2267D1",
     icon: "https://trykaego.com/wp-content/uploads/2025/01/Screenshot_2024-09-07_at_4.11.29_PM-removebg-preview-1.png",
-    date: "Jan 2024 - Dec 2024",
+    date: "Jan 2025 - March 2025",
     location: "Lagos, Nigeria - Remote",
     type: "Contract",
   },
@@ -51,12 +69,12 @@ const priorities: CareerJourneyItem[] = [
       "implement mobile app designs and functionality",
       "participate in hackathons",
     ],
-    image: "https://www.grav.id/appicon.svg",
-    color: "#3f51b5",
-    icon: "https://www.grav.id/appicon.svg",
+    image: "/images/large-gravid.svg",
+    color: "#060708",
+    icon: "/images/gravid.png",
     date: "June 2024 - present",
     location: "San Francisco, US - Remote",
-    type: "Contract",
+    type: "Full time",
   },
   {
     key: "amplity",
@@ -68,51 +86,13 @@ const priorities: CareerJourneyItem[] = [
       "collaborate with product designers to create pixel-perfect, user-centric websites",
       "manage, maintain, and keep the websites updated",
     ],
-    image:
-      "https://amplity.agency/wp-content/uploads/2022/06/amplitynewhiRES-e1693831760554-2048x651.png",
+    image: "/images/large-amplity.svg",
     color: "#1297d5",
-    icon: "https://amplity.agency/wp-content/uploads/2022/06/amplity-icon.png",
+    icon: "/images/amplity.png",
     date: "Apr 2022 - present",
     location: "Warri, Nigeria - Hybrid",
     type: "Contract",
   },
-  // {
-  //   key: "High Income Skills",
-  //   title: "High Income Skills",
-  //   description:
-  //     "Learn skills that pay the bills and set you up for life. Master in-demand technologies and methodologies.",
-  //   activities: [
-  //     "collaborate with product designers to create pixel-perfect, user-centric websites",
-  //     "manage, maintain, and keep the websites updated",
-  //     "",
-  //   ],
-  //   image: "/assets/images/DSC_0014.jpg",
-  //   color: "#9c27b0",
-  //   icon: "/assets/images/ri_funds-fill.png",
-  //   date: "Jan 2024 - Dec 2024",
-  // },
-  // {
-  //   key: "Physical classes",
-  //   title: "Physical classes",
-  //   description:
-  //     "Face-to-face, undistracted learning in an engaging classroom setting. Experience hands-on learning at its finest.",
-  //   activities: ["", "", ""],
-  //   image: "/assets/images/Img11.webp",
-  //   color: "#009688",
-  //   icon: "/assets/images/material-symbols_home-pin-rounded.png",
-  //   date: "Jan 2024 - Dec 2024",
-  // },
-  // {
-  //   key: "Networking",
-  //   title: "Strategic Networking",
-  //   description:
-  //     "Build valuable connections with like-minded peers who will challenge and inspire you to grow beyond your limits.",
-  //   activities: ["", "", ""],
-  //   image: "/assets/images/Img2.webp",
-  //   color: "#ff9800",
-  //   icon: "/assets/images/game-icons_fist.png",
-  //   date: "Jan 2024 - Dec 2024",
-  // },
 ];
 
 export default function CareerJourney() {
@@ -206,27 +186,17 @@ export default function CareerJourney() {
   return (
     <div
       ref={sectionRef}
-      className="flex flex-col items-center justify-center px-4 md:px-10 gap-8 pb-[5%] relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-primaryGreen dark:via-[#222] dark:to-[#131314]"
+      className="flex flex-col items-center justify-center px-4 md:px-10 gap-8 pt-[4.5rem] pb-[5%] relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-primaryGreen dark:via-[#222] dark:to-[#131314]"
     >
-      {/* <header className="text-center space-y-4 max-w-4xl mx-auto">
-        {!isHome ? (
-          <SectionHeader
-            className="flex justify-center items-center"
-            headingClassName=""
-            pClassName=""
-            headingText="The DYEN Advantage"
-            pText="Discover what makes our program exceptional"
-          />
-        ) : (
-          <SectionHeader
-            className="flex justify-center items-center"
-            headingClassName=""
-            pClassName=""
-            headingText="What We Do"
-            pText="We tackle the globally increasing unemployment rate and uneven wealth distribution by providing a platform for training, mentorship, and internship placements to help youths develop the skills necessary to start their own businesses or land high-income jobs."
-          />
-        )}
-      </header> */}
+      <header className=" w-full lg:pb-[25px] lg:px-[30px] ">
+        <TitleText
+          // className="flex justify-center items-center"
+          largeClassName=""
+          smallClassName=""
+          largeHeading="Some of my relevant experiences"
+          smallHeading="My Journey"
+        />
+      </header>
       <section className="flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 lg:gap-16 relative w-full max-w-7xl">
         ` {/* Left Circular Image */}
         <div className="w-full md:top-0 lg:w-auto hidden lg:flex justify-center items-center relative lg:sticky lg:top-[19%] z-10">
@@ -384,15 +354,15 @@ export default function CareerJourney() {
 
               {/* Content */}
               <div className="space-y-6 pb-[10px] sm:space-y-4">
-                {/* <h2
-                  className={`text-2xl sm:text-3xl lg:text-4xl font-bold transition-all duration-500 leading-tight ${
+                <h2
+                  className={`text-lg mb-0 lg:mb-[10px] lg:text-xl font-bold transition-all duration-500 leading-tight ${
                     index === activeIndex
                       ? "text-gray-900 transform translate-x-1 sm:translate-x-2"
                       : "text-gray-700 group-hover:text-gray-800"
                   }`}
                 >
-                  {item.title}
-                </h2> */}
+                  At <span className="uppercase">{item.key}</span>, I:
+                </h2>
 
                 <ul
                   className={`text-sm sm:text-base mb-[6px] lg:text-xl leading-relaxed transition-all duration-500 ${

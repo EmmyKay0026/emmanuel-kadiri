@@ -1,7 +1,6 @@
-import Link from "next/link";
-import React from "react";
-import Button from "../atoms/Button";
 import Image from "next/image";
+import Link from "next/link";
+import Button from "../atoms/Button";
 
 const HomeHero = () => {
   return (
@@ -35,7 +34,10 @@ const HomeHero = () => {
             />
             {"."}
           </h1>
-          {/* <p className="">WIth</p> */}
+          <p className="text-secondary dark:text-accent text-[1rem]  md:text-[1rem]  lg:text-[1.1rem] mt-4 w-[90%]">
+            More than just development, I design scalable product architectures
+            that drive business growth and cost you less.
+          </p>
         </div>
         <div className="hero-btn-cont flex gap-[9px] md:gap-[20px]">
           <Link href={"/#portfolio"} className="">
@@ -66,7 +68,7 @@ const HomeHero = () => {
 </div> */}
         {/* Social Icons */}
 
-        <div className="absolute  right-10 ">
+        <div className="absolute  right-16 ">
           <div className="hidden flex-col justify-end items-end gap-3 py-2 px-[8px] rounded-b-[3px] lg:flex ">
             <Link
               href="https://github.com/EmmyKay0026"

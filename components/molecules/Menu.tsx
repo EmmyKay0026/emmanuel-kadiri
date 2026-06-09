@@ -15,7 +15,7 @@ const Menu = () => {
             className={
               "btn  underline text-black dark:text-white cursor-pointer "
             }
-            href={"#"}
+            href={"#about"}
           >
             about me
           </Link>
@@ -24,27 +24,27 @@ const Menu = () => {
             className={
               "btn  underline text-black dark:text-white cursor-pointer "
             }
-            href={"#"}
+            href={"#portfolio"}
           >
             {" "}
             my works
           </Link>
           , the latest on{" "}
-          <a
-            href=""
+          <Link
+            href="https://github.com/EmmyKay0026"
             className={
               " btn underline text-black dark:text-white cursor-pointer "
             }
           >
             {" "}
-            Instagram
-          </a>
+            GitHub
+          </Link>
           , and{" "}
           <Link
             className={
               "btn  underline text-black dark:text-white cursor-pointer "
             }
-            href={"#"}
+            href={"#contact"}
           >
             contact me
           </Link>

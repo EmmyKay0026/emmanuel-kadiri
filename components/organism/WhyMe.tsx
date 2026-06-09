@@ -1,11 +1,9 @@
 /* eslint-disable */
 "use client";
-import { motion } from "framer-motion";
-import { FaCogs, FaUsers, FaEye } from "react-icons/fa";
+import { useTheme } from "next-themes";
+import { FaCogs, FaEye, FaUsers } from "react-icons/fa";
 import SpotlightCard from "../molecules/SpotlightCard";
 import TitleText from "../molecules/TitleText";
-import { useEffect, useState } from "react";
-import { useTheme } from "next-themes";
 
 const boxes = [
   {
@@ -41,7 +39,7 @@ export default function WhyMe() {
       <article className="w-full">
         <TitleText
           smallHeading="Why Me?"
-          largeHeading="Here are some special offer for you"
+          largeHeading="Here is why I stand out from the crowd"
           largeClassName=""
           smallClassName="dark:text-primaryGreen"
         />
